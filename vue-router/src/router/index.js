@@ -15,12 +15,12 @@ export default new Router({
     },
     {
       path: '/index',
-      name: 'index',
+      name: 'Index',
       component: Index
     },
     {
       path: '/edit/:id',
-      name: 'edit',
+      name: 'Edit',
       component: Edit
     },
   ]

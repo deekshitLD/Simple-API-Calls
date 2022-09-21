@@ -37,7 +37,7 @@
           methods: {
               getUser()
               {
-                let uri = 'http://localhost:3000/Users/edit/' + this.$route.params.id;
+                let uri = 'http://localhost:3000/users/:id/' + this.$route.params.id;
                   this.axios.get(uri).then((response) => {
                       this.User = response.data;
                   });
@@ -45,7 +45,7 @@
 
               updateUser()
               {
-                let uri = 'http://localhost:3000/Users/update/' + this.$route.params.id;
+                let uri = 'http://localhost:3000/users' + this.$route.params.id;
                   this.axios.post(uri, this.User).then((response) => {
                     this.$router.push({name: 'Index'});
                   });

@@ -2,10 +2,10 @@
   <div class="container">
         <div class="card">
             <div class="card-header">
-                <h3>Add User</h3>
+                <h3>Create User</h3>
             </div>
             <div class="card-body">
-                <form v-on:submit.prevent="addUser">
+                <form v-on:submit.prevent="createUser">
                     <div class="form-group">
                         <label>User Name:</label>
                         <input type="text" class="form-control" v-model="User.name"/>
@@ -15,7 +15,7 @@
                         <input type="text" class="form-control" v-model="User.email"/>
                     </div>
                     <div class="form-group">
-                        <input type="submit" class="btn btn-primary" value="Add User"/>
+                        <input type="submit" class="btn btn-primary" value="createUser"/>
                     </div>
                 </form>
             </div>
@@ -26,7 +26,7 @@
 <script>
 export default {
   components: {
-      name: 'AddUser'
+      name: 'createUser'
   },
   data() {
       return {
@@ -34,8 +34,8 @@ export default {
       }
   },
   methods: {
-      addUser() {
-           let uri = 'http://localhost:3000/Users/add';
+      createUser() {
+           let uri = 'http://localhost:3000/createUser';
             this.axios.post(uri, this.User).then(response => {
                  this.$router.push({name: 'Index'});
             });
